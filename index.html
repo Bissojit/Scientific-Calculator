@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+<body>
+    <div id = "splash-screen">
+        <h1 class="splash-title">Scientific Calculator</h1>
+    </div>
+    <div id="appWrapper" style="display: none;">
+      </div>
+  <div class="app">
+    <!-- Top Toggles -->
+    <div class="top-bar">
+      <div class="toggle-group">
+        <label><input type="checkbox" id="themeToggle" /> 🌙 Dark Mode</label>
+        <label><input type="checkbox" id="angleToggle" /> °/rad</label>
+      </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+      <!-- Calculator Section -->
+      <div class="container">
+        <div class="display">
+          <input id="screen" type="text" placeholder="0" autocomplete="off" />
+        </div>
+
+        <div class="btns">
+          <div class="row">
+            <button id="ce" onclick="backspc()">CE</button>
+            <button onclick="fact()">x!</button>
+            <button class="btn">(</button>
+            <button class="btn">)</button>
+            <button onclick="percent()">%</button>
+            <button id="ac" onclick="clearScreen()">AC</button>
+          </div>
+          <div class="row">
+            <button onclick="sin()">sin</button>
+            <button onclick="pi()">π</button>
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn">÷</button>
+          </div>
+          <div class="row">
+            <button onclick="cos()">cos</button>
+            <button onclick="log()">log</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn">×</button>
+          </div>
+          <div class="row">
+            <button onclick="tan()">tan</button>
+            <button onclick="sqrt()">√</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">-</button>
+          </div>
+          <div class="row">
+            <button onclick="e()">e</button>
+            <button onclick="pow()">x<sup>y</sup></button>
+            <button class="btn">0</button>
+            <button class="btn">.</button>
+            <button id="eval" onclick="calculate()">=</button>
+            <button class="btn">+</button>
+          </div>
+          <div class="row">
+            <button onclick="ln()">ln</button>
+            <button onclick="abs()">abs</button>
+            <button onclick="exp()">exp</button>
+            <button onclick="mod()">mod</button>
+            <button onclick="floor()">floor</button>
+            <button onclick="ceil()">ceil</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- History Panel -->
+      <div class="history-panel">
+        <h3>History</h3>
+        <ul id="historyList"></ul>
+        <div class="history-actions">
+          <button onclick="clearHistory()">Clear All</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graph Section -->
+    <div class="graph-section">
+      <h3>Graph Plotter</h3>
+      <input type="text" id="graphInput" placeholder="Enter a function, e.g. y = x^2 or sin(x)" />
+      <button onclick="plotGraph()">Plot</button>
+
+      <div class="resizable-canvas">
+        <canvas id="graphCanvas" width="600" height="400"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js">
+     window.addEventListener("load", () => {
+    const splash = document.getElementById("splash-screen");
+    splash.classList.add("fade-out");
+    setTimeout(() => {
+      splash.style.display = "none";
+    }, 2000); // matches CSS animation duration
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #dfe9f3 0%, #ffffff 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("https://www.templeton.org/wp-content/uploads/2023/08/Mathematics-Article-BANNER-1-scaled.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .app {
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Top bar */
+  .top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .toggle-group {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .toggle-group label {
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  /* Layout for calculator and history */
+  .main-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  /* Calculator Container */
+  .container {
+    flex: 2;
+    background: #ffffff;
+    border: 2px solid #bbb;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Display Input */
+  .display #screen {
+    width: 100%;
+    height: 60px;
+    font-size: 28px;
+    padding-right: 10px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+  }
+  
+  /* Button Grid */
+  .btns .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .row button {
+    width: 60px;
+    height: 35px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e0e0e0;
+    box-shadow: 2px 2px 4px #ccc;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .row button:hover {
+    background-color: #d3d3d3;
+  }
+  
+  /* Special Buttons */
+  #eval {
+    background-color: #1e90ff;
+    color: white;
+  }
+  
+  #eval:hover {
+    background-color: #1c86ee;
+  }
+  
+  #ac {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  #ac:hover {
+    background-color: #218838;
+  }
+  
+  #ce {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  #ce:hover {
+    background-color: #c82333;
+  }
+  
+  /* History Panel */
+  .history-panel {
+    flex: 1;
+    min-width: 240px;
+    background: #ffffff;
+    border: 2px solid #bbb;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .history-panel h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
+  #historyList {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  
+  #historyList li {
+    padding: 6px 10px;
+    background: #f1f1f1;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #historyList li:hover {
+    background: #e0e0e0;
+  }
+  
+  .history-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .history-actions button {
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .history-actions button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Graph Section */
+  .graph-section {
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .graph-section h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  #graphInput {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    margin-bottom: 10px;
+  }
+  
+  .graph-section button {
+    padding: 10px 16px;
+    font-size: 14px;
+    margin-left: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .graph-section button:hover {
+    background-color: #0069d9;
+  }
+  
+  /* Resizable Graph Canvas */
+  .resizable-canvas {
+    display: inline-block;
+    position: relative;
+    resize: both;
+    overflow: auto;
+    max-width: 100%;
+    min-width: 300px;
+    min-height: 200px;
+    margin-top: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  #graphCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  /* Dark Mode */
+  .dark body {
+    background: #121212;
+    color: white;
+  }
+  
+  .dark .container,
+  .dark .history-panel,
+  .dark .graph-section input,
+  .dark .graph-section button {
+    background: #1e1e1e;
+    color: white;
+    border-color: #555;
+  }
+  
+  .dark #graphCanvas {
+    background: #222;
+  }
+  
+  .dark .resizable-canvas {
+    border-color: #444;
+  }
+/* Splash Screen */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1e90ff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-size: 2.5rem;
+    font-weight: bold;
+    animation: popIn 0.8s ease-in-out;
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .fade-out {
+    animation: fadeOut 0.8s ease-in-out forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+/* Splash Screen Animation */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #2b5876, #4e4376);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: splashFadeOut 3s ease-in-out forwards;
+    animation-delay: 2s;
+  }
+  
+  .splash-title {
+    color: #fff;
+    font-size: 3em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: titleFadeIn 1.5s ease-out forwards;
+  }
+  
+  @keyframes titleFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes splashFadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  .toggle-group label {
+    margin-left: 10px;
+    cursor: pointer;
+    color: white;
+  }
+  .graph-section h3 {
+    color: rgb(237, 237, 22);
+  }
+  
